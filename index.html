@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gordo Proteico ❤️</title>
 
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#ffd6e7;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.caja{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  width:320px;
+}
+button{
+  padding:12px 20px;
+  border:none;
+  border-radius:25px;
+  margin:8px;
+  font-size:18px;
+}
+#si{background:#ff4d88;color:white;}
+#no{background:#ddd;}
+#segunda{display:none;}
+.gift{font-size:70px;animation:sube 2s infinite;}
+@keyframes sube{
+  50%{transform:translateY(-8px);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="caja" id="primera">
+  <div class="gift">😴💤</div>
+  <h2>¿Querés venir a dormir conmigo?</h2>
+  <h3>Gordo proteico ❤️</h3>
+
+  <button id="si">Sí</button>
+  <button id="no">No</button>
+</div>
+
+<div class="caja" id="segunda">
+  <div class="gift">😘💋</div>
+  <h2>Confírmame el horario</h2>
+  <h3>Gordo lindo ❤️</h3>
+</div>
+
+<script>
+let no=document.getElementById("no");
+let si=document.getElementById("si");
+let grande=1;
+
+si.onclick=()=>{
+ document.getElementById("primera").style.display="none";
+ document.getElementById("segunda").style.display="block";
+}
+
+no.onclick=()=>{
+ grande+=0.3;
+ no.style.transform=`scale(${grande})`;
+}
+</script>
+
+</body>
+</html>
